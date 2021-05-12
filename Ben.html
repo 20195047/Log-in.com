@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCU | Log-in</title>
+</head>
+<body>
+    <div class="Bg" id="pop-1">
+        <div id="overlay"></div>
+        <form>
+            <input type="text" id="userName" placeholder="Username"> 
+            <br>
+            <br>
+            <input type="password" id="passWord" placeholder="Password">
+            <br>
+            <br>
+            <input type="submit" id="click" onclick="login()" value="Log In">
+        </form>
+    
+    </div>
+    <div id="imahe">
+        <img id="check" src="check-circle.gif">
+        <h1>Successfuly Log in</h1>
+    </div>
+    
+<script>
+    
+    var uname = "20195047"
+    var pword = "2021ucu"
+    document.getElementById("overlay").style.display="none";
+    document.getElementById("imahe").style.display="none";
+    function login(){
+    
+    userName = document.getElementById('userName').value;
+    passWord = document.getElementById('passWord').value;
+
+    if (uname == userName && pword == passWord) 
+    {
+        document.getElementById("overlay").style.display="inline";
+        document.getElementById("imahe").style.display="inline";
+    }
+    else if (uname != userName && pword == passWord)
+    {
+        alert("Invalid Username");
+    }
+    else if (uname == userName && pword != passWord)
+    {
+        alert("Invalid Password");
+    }
+    else {
+        alert("Access Denied");
+    }
+    
+}
+</script>
+</body>
+</html>
